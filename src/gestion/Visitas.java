@@ -27,7 +27,7 @@ public class Visitas {
 	
 	/**
 	 * Método para la introducción de la variable "peso"
-	 */
+	 */   
 	public static void inPeso(){
 		
 		
