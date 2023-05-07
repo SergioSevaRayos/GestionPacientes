@@ -25,12 +25,16 @@ public class LeerFichero {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String rutaPac = "C:/Users/sergi/git/PracticaEDt6/ficheros/Pacientes.txt";
-		String rutaVis = "C:/Users/sergi/git/PracticaEDt6/ficheros/Visitas.txt";
-		System.out.println("Datos de los pacientes");
-		muestraContenido(rutaPac);
+		String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
+		String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
 		System.out.println("--------------------------------------------------");
-		System.out.println("Datos de las visitas");
+		System.out.println("		Datos de los pacientes");
+		System.out.println("__________________________________________________");
+		muestraContenido(rutaPac);
+		System.out.println("###################################################");
+		System.out.println("--------------------------------------------------");
+		System.out.println("		Datos de las visitas");
+		System.out.println("__________________________________________________");
 		muestraContenido(rutaVis);
 	}
 }

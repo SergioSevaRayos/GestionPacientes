@@ -36,7 +36,7 @@ public class Visitas {
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
 			// Recolección del dato "peso"
-			op = 2;
+			Menu.op = 2;
 			System.out.println("FORMATO: El peso consta de caracteres numericos");
 			System.out.println("Ej. 90");
 			System.out.println("\nIntroduce el peso del paciente: ");
@@ -45,6 +45,7 @@ public class Visitas {
 			// Mediante esta sentencia nos aseguramos que el peso tiene el formato correcto
 			if (peso != 0) {
 				System.out.println("Peso correcto");
+				Menu.op = 2;
 				Menu.menu();
 			}else {
 				System.err.println("Peso incorrecto, vuelve a introducirlo");
@@ -64,7 +65,7 @@ public class Visitas {
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
 			// Recolección del dato "altura"
-			op = 2;
+			Menu.op = 2;
 			System.out.println("FORMATO: La altura consta de caracteres numericos y se separan por una coma");
 			System.out.println("Ej. 1,90");
 			System.out.println("\nIntroduce la altura del paciente: ");
@@ -73,6 +74,7 @@ public class Visitas {
 			// Mediante esta sentencia nos aseguramos que la altura tiene el formato correcto
 			if (altura != 0) {
 				System.out.println("Altura correcta");
+				Menu.op = 2;
 				Menu.menu();
 			}else {
 				System.err.println("Altura incorrecta, vuelve a introducirla");
@@ -92,7 +94,6 @@ public class Visitas {
 	*/
 	public static void inDNIvisita() {
 		// Recolección del dato "DNI"
-		op = 2;
 		System.out.println("FORMATO: El DNI contiene 8 caracteres numericos y uno alfabetico al final");
 		System.out.println("Ej. 99999999y");
 		System.out.print("\nIntroduce el DNI del paciente: ");
@@ -101,6 +102,7 @@ public class Visitas {
 		// Mediante esta sentencia comprobamos que el "DNI" tiene el formato correcto
 		if (Pacientes.DNI != null && Pacientes.DNI.matches("\\d{8}[A-Za-z]")) {
 			System.out.println("DNI correcto");
+			Menu.op = 2;
 			Menu.menu();
 		}else {
 			System.out.print("DNI incorrecto, vuelve a introducirlo: ");
@@ -114,7 +116,7 @@ public class Visitas {
 	public static void calcC() {
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
-			op = 2;
+			Menu.op = 2;
 			IMC = peso / (altura * altura); // Variable para almacenar el índice de masa corporal
 			Menu.menu();
 		} catch (Exception e) {

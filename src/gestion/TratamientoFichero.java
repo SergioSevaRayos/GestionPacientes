@@ -19,8 +19,8 @@ import java.io.PrintWriter;
  */
 public class TratamientoFichero {
 	// Variables para leer los ficheros pacientes
-	static String rutaPac = "C:/Users/sergi/git/PracticaEDt6/ficheros/Pacientes.txt";
-	static String rutaVis = "C:/Users/sergi/git/PracticaEDt6/ficheros/Visitas.txt";
+	static String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
+	static String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
 	
 	// Variables para escribir en los ficheros
 	static PrintWriter pw = null;
@@ -75,7 +75,7 @@ public class TratamientoFichero {
 			pw = new PrintWriter(fichero);
 			
 			//---------------------------------------------- Inicio 
-			pw.println(Pacientes.DNI + ", " + Visitas.f + ", " + Visitas.h + ", " + Visitas.peso + Visitas.kg + ", " + Visitas.altura + Visitas.m + ", " + ((double)Math.round(Visitas.IMC * 100d) / 100d));
+			pw.println(Pacientes.DNI + ", " + Visitas.f + ", " + Visitas.h + ", " + Visitas.peso + Visitas.kg + ", " + Visitas.altura + Visitas.m + ", " + ((double)Math.round(Visitas.IMC * 100d) / 100d) + " IMC");
 			//---------------------------------------------- Fin   
 			
 		} catch (Exception e) {
