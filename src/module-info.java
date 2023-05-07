@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author sergi
- *
- */
-module GestionPacientes {
-}
