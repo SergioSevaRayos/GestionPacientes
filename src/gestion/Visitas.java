@@ -1,5 +1,7 @@
 package gestion;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -7,7 +9,8 @@ import java.util.Scanner;
 public class Visitas {
 	// Variables para formato de fecha
 	static Date fecha = new Date(); // Variable para generar la fecha y la hora
-	static SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy"); // Variable para darle el formato a la fecha
+	
+	static SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd"); // Variable para darle el formato a la fecha
 	static SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss"); // Variable para darle el formato a la hora
 			
 	// Variables para gestionar las visitas
@@ -15,24 +18,23 @@ public class Visitas {
 	static String horaCons = formatoHora.format(fecha); // Variable para almacenar la hora de la consulta 
 	static String h = horaCons;
 	static String f = fechaCons;
-	static double peso; // Variable para almacenar el peso
+	static double peso = 000.00; // Variable para almacenar el peso
 	static double altura; // Variable para almacenar la altura
 	static double IMC; // Variable para almacenar el índice de masa corporal
 	static final String kg = "kg"; // Variable para indicar la unidad de medida del peso
 	static	final String m = "m"; // Variable para indicar la unidad de medida de la altura
-			
+
+	
 	static int op = 0; // Variable para la selección de las diferentes opciones
 	static Scanner sc = new Scanner(System.in); // Variable para escanear las diferentes opciones
 	
 	
 	/**
 	 * Método para la introducción de la variable "peso"
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */   
-	public static void inPeso(){
-		
-		
-		
-		
+	public static void inPeso() throws FileNotFoundException, IOException{
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
 			// Recolección del dato "peso"
@@ -60,8 +62,10 @@ public class Visitas {
 	
 	/**
 	 * Método para la introducción de la variable "altura"
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void inAltura() {
+	public static void inAltura() throws FileNotFoundException, IOException {
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
 			// Recolección del dato "altura"
@@ -91,8 +95,10 @@ public class Visitas {
 	/**
 	* Método para la introducción del dato "DNI" en las visitas, mediante este método nos aseguramos
 	* que los datos introducidos son correctos
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	*/
-	public static void inDNIvisita() {
+	public static void inDNIvisita() throws FileNotFoundException, IOException {
 		// Recolección del dato "DNI"
 		System.out.println("FORMATO: El DNI contiene 8 caracteres numericos y uno alfabetico al final");
 		System.out.println("Ej. 99999999y");
@@ -112,8 +118,10 @@ public class Visitas {
 	
 	/**
 	 * Método por el cual se calcula el IMC
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void calcC() {
+	public static void calcC() throws FileNotFoundException, IOException {
 		// Mediante try/catch nos aseguramos que el programa no se detiene cuando haya un error
 		try {
 			Menu.op = 2;
@@ -129,6 +137,7 @@ public class Visitas {
 	 * Método para inicializar los datos
 	 */
 	public static void iniciaDatosVis() {
+		Menu.op = 1;
 		Pacientes.DNI = "";
 		horaCons = "";
 		fechaCons = "";
@@ -136,6 +145,7 @@ public class Visitas {
 		altura = 0;
 		IMC = 0;
 		op = 0;
+		Profesionales_Medicos.id_codigo = 0;
 	}
 	
 }

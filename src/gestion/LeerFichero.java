@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 /*
 * En este método contemplamos otra opción de captura de 
 excepciones con la llamada en la definición
@@ -14,19 +15,27 @@ reservada Throws seguida
 * 
 */
 public class LeerFichero {
+	static String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
+	static String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
+	static String rutaMed = "C:/Users/sergi/git/GestionPacientes/ficheros/Medicos.txt";
+	static String linea;
+	static String dniPaciente;
+	static String archivo;
+	static String codMedico;
+	static String cadena;
+	
 	public static void muestraContenido(String archivo) throws FileNotFoundException, IOException {
-		String cadena;
+		
 		FileReader f = new FileReader(archivo);
 		BufferedReader b = new BufferedReader(f);
+		
 		while ((cadena = b.readLine()) != null) {
 			System.out.println(cadena);
 		}
 		b.close();
-	}
-
+	}	
+	
 	public static void main(String[] args) throws IOException {
-		String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
-		String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
 		System.out.println("--------------------------------------------------");
 		System.out.println("		Datos de los pacientes");
 		System.out.println("__________________________________________________");
@@ -36,5 +45,9 @@ public class LeerFichero {
 		System.out.println("		Datos de las visitas");
 		System.out.println("__________________________________________________");
 		muestraContenido(rutaVis);
+		System.out.println("###################################################");
+		System.out.println("--------------------------------------------------");
+		System.out.println("		Datos de los medicos");
+		System.out.println("__________________________________________________");
 	}
 }

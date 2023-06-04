@@ -21,6 +21,7 @@ public class TratamientoFichero {
 	// Variables para leer los ficheros pacientes
 	static String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
 	static String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
+	static String rutaMed = "C:/Users/sergi/git/GestionPacientes/ficheros/Medicos.txt";
 	
 	// Variables para escribir en los ficheros
 	static PrintWriter pw = null;
@@ -75,7 +76,50 @@ public class TratamientoFichero {
 			pw = new PrintWriter(fichero);
 			
 			//---------------------------------------------- Inicio 
-			pw.println(Pacientes.DNI + ", " + Visitas.f + ", " + Visitas.h + ", " + Visitas.peso + Visitas.kg + ", " + Visitas.altura + Visitas.m + ", " + ((double)Math.round(Visitas.IMC * 100d) / 100d) + " IMC");
+			pw.println(Pacientes.DNI + ", " + Visitas.f + ", " + Visitas.h + ", " + Visitas.peso + Visitas.kg + ", " + Visitas.altura + Visitas.m + ", " + ((double)Math.round(Visitas.IMC * 100d) / 100d) + " IMC" + ", " + Profesionales_Medicos.id_codigo);
+			//---------------------------------------------- Fin   
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// Nuevamente aprovechamos el finally para
+				// asegurarnos que se cierra el fichero.
+				if (null != fichero) {
+					fichero.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+
+			} finally {
+				try {
+					// Nuevamente aprovechamos el finally para
+					// asegurarnos que se cierra el fichero.
+					if (null != fichero) {
+						fichero.close();
+					}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public static void tryCatchMedico() {
+		try {
+			// Añadir flag a true para no machacar contenido del
+			fichero = new FileWriter(rutaMed, true);
+			pw = new PrintWriter(fichero);
+			
+			//---------------------------------------------- Inicio 
+			pw.println(
+					Profesionales_Medicos.id_codigo + ", " + 
+					Profesionales_Medicos.telefono + ", " + 
+					Profesionales_Medicos.especialidad + ", " + 
+					Profesionales_Medicos.nombre + ", "+
+					Profesionales_Medicos.apellidos + ", " + 
+					Profesionales_Medicos.DNI + ", "+
+					Profesionales_Medicos.localidad);
 			//---------------------------------------------- Fin   
 			
 		} catch (Exception e) {
