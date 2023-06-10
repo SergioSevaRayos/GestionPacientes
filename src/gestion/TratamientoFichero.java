@@ -3,29 +3,22 @@ package gestion;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-
-/*
- * Aquí contemplamos una de las opciones a la hora de capturar 
- * excepciones.
- * En esta parte lo hacemos con la estructura try + catch y añadimos la 
- * opción de ejecución obligatoria con la sentencia finally.
- */
-
 /**
+ * Clase encargada de leer los ficheros almacenados en los documentos de texto Visitas.txt, Pacientes.txt y Medicos.txt.
  * 
- * @author Sergio Seva Rayos
- * @version 1.0
- *
+ * @author		Sergio Seva Rayos.
+ * @version		V0.4.
+ * @since 		01/03/2023.
  */
 public class TratamientoFichero {
 	// Variables para leer los ficheros pacientes
-	static String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";
-	static String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";
-	static String rutaMed = "C:/Users/sergi/git/GestionPacientes/ficheros/Medicos.txt";
+	static String rutaPac = "C:/Users/sergi/git/GestionPacientes/ficheros/Pacientes.txt";	// Variable que almacena la ruta del archivo Pacientes.txt.
+	static String rutaVis = "C:/Users/sergi/git/GestionPacientes/ficheros/Visitas.txt";		// Variable que almacena la ruta del archivo Visitas.txt.
+	static String rutaMed = "C:/Users/sergi/git/GestionPacientes/ficheros/Medicos.txt";		// Variable que almacena la ruta del archivo Medicos.txt.
 	
 	// Variables para escribir en los ficheros
-	static PrintWriter pw = null;
-	static FileWriter fichero = null;
+	static PrintWriter pw = null;															// Variable para mostrar los datos por pantalla
+	static FileWriter fichero = null;														// Variable para escribir en los ficheros
 
 	/**
 	 * Método por el cual guardamos los datos de los pacientes en un documento .txt
@@ -105,6 +98,9 @@ public class TratamientoFichero {
 		}
 	}
 	
+	/**
+	 * Método por el cual guardamos los datos de los profesionales medicos en un documento .txt
+	 */
 	public static void tryCatchMedico() {
 		try {
 			// Añadir flag a true para no machacar contenido del

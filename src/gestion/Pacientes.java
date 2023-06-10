@@ -6,16 +6,21 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Clase para agregar pacientes
+ * 
+ * @author		Sergio Seva Rayos.
+ * @version		V0.4.
+ * @since 		01/03/2023.
+ */
 public class Pacientes {
 	// Variables para gestionar los pacientes
-		static String DNI; // Variable para almacenar el DNI
-		static String nombre; // Variable para almacenar nombre
-		static String edad; // Variable para almacenar la edad
-		static String calle; // Variable para almacenar la calle
-		static String localidad; // Variable para almacenar la localidad
-		static String cod_postal; // Variable para almacenar el código postal
-		static String linea;
-		
+		static String DNI; 																	// Variable para almacenar el DNI
+		static String nombre; 																// Variable para almacenar nombre
+		static String edad; 																// Variable para almacenar la edad
+		static String calle; 																// Variable para almacenar la calle
+		static String localidad; 															// Variable para almacenar la localidad
+		static String cod_postal; 															// Variable para almacenar el código postal
 		
 		static int op = 0; // Variable para la selección de las diferentes opciones
 		static Scanner sc = new Scanner(System.in); // Variable para escanear las diferentes opciones

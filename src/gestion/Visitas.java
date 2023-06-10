@@ -6,27 +6,34 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * Clase encargada de gestionar nuevas visitas
+ * 
+ * @author		Sergio Seva Rayos.
+ * @version		V0.4.
+ * @since 		01/03/2023.
+ */
 public class Visitas {
 	// Variables para formato de fecha
-	static Date fecha = new Date(); // Variable para generar la fecha y la hora
+	static Date fecha = new Date(); 														// Variable para generar la fecha y la hora
 	
-	static SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd"); // Variable para darle el formato a la fecha
-	static SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss"); // Variable para darle el formato a la hora
+	static SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd"); 				// Variable para darle el formato a la fecha
+	static SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm:ss"); 				// Variable para darle el formato a la hora
 			
 	// Variables para gestionar las visitas
-	static String fechaCons = formatoFecha.format(fecha); // Variable para la fecha
-	static String horaCons = formatoHora.format(fecha); // Variable para almacenar la hora de la consulta 
-	static String h = horaCons;
-	static String f = fechaCons;
-	static double peso = 000.00; // Variable para almacenar el peso
-	static double altura; // Variable para almacenar la altura
-	static double IMC; // Variable para almacenar el índice de masa corporal
-	static final String kg = "kg"; // Variable para indicar la unidad de medida del peso
-	static	final String m = "m"; // Variable para indicar la unidad de medida de la altura
+	static String fechaCons = formatoFecha.format(fecha); 									// Variable para la fecha de la consulta
+	static String horaCons = formatoHora.format(fecha); 									// Variable para la hora de la consulta 
+	static String h = horaCons; 															// Variable para almacenar la hora de la consulta
+	static String f = fechaCons; 															// Variable para almacenar la fecha de la cosulta
+	static double peso = 000.00;															// Variable para almacenar el peso
+	static double altura; 																	// Variable para almacenar la altura
+	static double IMC; 																		// Variable para almacenar el índice de masa corporal
+	static final String kg = "kg"; 															// Variable para indicar la unidad de medida del peso
+	static	final String m = "m"; 															// Variable para indicar la unidad de medida de la altura
 
 	
-	static int op = 0; // Variable para la selección de las diferentes opciones
-	static Scanner sc = new Scanner(System.in); // Variable para escanear las diferentes opciones
+	static int op = 0; 																		// Variable para la selección de las diferentes opciones
+	static Scanner sc = new Scanner(System.in); 											// Variable para escanear las diferentes opciones
 	
 	
 	/**
@@ -59,7 +66,7 @@ public class Visitas {
 			Menu.menu();
 		}
 	}
-	
+
 	/**
 	 * Método para la introducción de la variable "altura"
 	 * @throws IOException 

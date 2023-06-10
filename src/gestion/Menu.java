@@ -5,53 +5,58 @@ import java.io.IOException;
 //import java.sql.Date;
 import java.util.Scanner;
 
+/**
+ * Clase para gestionar el menú, desde el se gestiona toda la aplicación
+ * 
+ * @author		Sergio Seva Rayos.
+ * @version		V0.4.
+ * @since 		01/03/2023.
+ */
 public class Menu {
-	
-	// Variables generales
-		static int op = 0; // Variable para la selecciÃ³n de las diferentes opciones
-		static Scanner sc = new Scanner(System.in); // Variable para escanear las diferentes opciones
-		
-		/**
-		 * MÃ©todo para mostrar los datos que se van agregando
-		 */
-		static void muestraDatosPac() {
-			System.out.println("_______________________________________________________");
-			System.out.println("\t\t\tRESUMEN");
-			System.out.println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''");
-			System.out.println("DNI: " + Pacientes.DNI);
-			System.out.println("Nombre: "+ Pacientes.nombre);
-			System.out.println("Edad: "+ Pacientes.edad);
-			System.out.println("Calle: " + Pacientes.calle);
-			System.out.println("Localidad: "+ Pacientes.localidad);
-			System.out.println("Codigo postal: " + Pacientes.cod_postal);
-			System.out.println("_______________________________________________________");
-		}
-		
-		/**
-		 * MÃ©todo para mostrar los datos que se van agregando
-		 */
-		static void muestraDatosVis() {
-			System.out.println("_______________________________________________________");
-			System.out.println("\t\t\tRESUMEN");
-			System.out.println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''");
-			System.out.println("DNI: " + Pacientes.DNI);
-			System.out.println("Peso: "+ Visitas.peso + Visitas.kg);
-			System.out.println("Altura: "+ Visitas.altura + Visitas.m);
-			System.out.println("IMC: " + ((double)Math.round(Visitas.IMC * 100d) / 100d));
-			System.out.println("Hora Consulta: " + Visitas.h);
-			System.out.println("Fecha consulta: "+ Visitas.f);
-			System.out.println("Nombre profesional: " + Profesionales_Medicos.nombre);
-			System.out.println("Codigo: " + Profesionales_Medicos.id_codigo);
-			System.out.println("Especialidad--> " + Profesionales_Medicos.especialidad);
-			System.out.println("_______________________________________________________");
-		}	
-		
-		
-		
+	static int op = 0; 																		// Variable para la selección de las diferentes opciones
+	static Scanner sc = new Scanner(System.in); 											// Variable crear el scanner
+
 	/**
-	 * MÃ©todo a travÃ©s del cual gestionamos el menÃº
-	 * @throws IOException 
-	 * @throws FileNotFoundException 
+	 * Método para mostrar los datos que se van agregando
+	 */
+	static void muestraDatosPac() {
+		System.out.println("_______________________________________________________");
+		System.out.println("\t\t\tRESUMEN");
+		System.out.println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''");
+		System.out.println("DNI: " + Pacientes.DNI);
+		System.out.println("Nombre: "+ Pacientes.nombre);
+		System.out.println("Edad: "+ Pacientes.edad);
+		System.out.println("Calle: " + Pacientes.calle);
+		System.out.println("Localidad: "+ Pacientes.localidad);
+		System.out.println("Codigo postal: " + Pacientes.cod_postal);
+		System.out.println("_______________________________________________________");
+	}
+
+	/**
+	 * Método para mostrar los datos que se van agregando
+	 */
+	static void muestraDatosVis() {
+		System.out.println("_______________________________________________________");
+		System.out.println("\t\t\tRESUMEN");
+		System.out.println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''");
+		System.out.println("DNI: " + Pacientes.DNI);
+		System.out.println("Peso: "+ Visitas.peso + Visitas.kg);
+		System.out.println("Altura: "+ Visitas.altura + Visitas.m);
+		System.out.println("IMC: " + ((double)Math.round(Visitas.IMC * 100d) / 100d));
+		System.out.println("Hora Consulta: " + Visitas.h);
+		System.out.println("Fecha consulta: "+ Visitas.f);
+		System.out.println("Nombre profesional: " + Profesionales_Medicos.nombre);
+		System.out.println("Codigo: " + Profesionales_Medicos.id_codigo);
+		System.out.println("Especialidad--> " + Profesionales_Medicos.especialidad);
+		System.out.println("_______________________________________________________");
+	}	
+
+
+
+	/**
+	 * Método a través del cual gestionamos el menú
+	 * @throws IOException si ocurre un error.
+	 * @throws FileNotFoundException si no se encuentra el archivo en la ubicación especificada.
 	 */
 	public static void menu()  throws FileNotFoundException, IOException  {
 		while (op <= 0 || op >4) {
@@ -69,20 +74,20 @@ public class Menu {
 
 			// Mediante esta sentencia comprobamos que se introduce la opciÃ³n de forma correcta, y si no, que vuelva introducirla
 			if(sc.hasNextInt()) { 
-			    op = sc.nextInt(); 
+				op = sc.nextInt(); 
 			} else {
-			    sc.next(); 
-			    System.err.println("\nError");
-			    System.err.println("Error: Vuelve a elegir la opcion");
+				sc.next(); 
+				System.err.println("\nError");
+				System.err.println("Error: Vuelve a elegir la opcion");
 			}
-			
+
 			// Mediante esta sentencia informamos que la opciÃ³n elegida no esta dentro del rango
 			if (op < 0 || op > 4) {
-			    System.err.println("\nError");
-			    System.err.println("Error: Vuelve a elegir la opcion");
+				System.err.println("\nError");
+				System.err.println("Error: Vuelve a elegir la opcion");
 			}
 		}
-	
+
 		// AquÃ­ se establecen las diferentes opciones del menÃº
 		switch (op) {
 		case 1:
@@ -104,48 +109,56 @@ public class Menu {
 				System.out.println("");
 				System.out.println("0. Salir");
 				System.out.println("");
-				
+
 				// Mediante esta sentencia comprobamos que se introduce la opciÃ³n de forma correcta, y si no, que vuelva introducirla
 				if(sc.hasNextInt()) { 
-				    op = sc.nextInt(); 
+					op = sc.nextInt(); 
 				} else {
-				    sc.next(); 
-				    System.err.println("\nError");
-				    System.err.println("Error: Vuelve a elegir la opcion");
+					sc.next(); 
+					System.err.println("\nError");
+					System.err.println("Error: Vuelve a elegir la opcion");
 				}
 				if (op < 0 || op > 8) {
 					System.err.println("\nError");
 					System.err.println("Error: Vuelve a elegir la opcion");
 				}
-				
-				// AquÃ­ se establecen las diferentes opciones de la recolecciÃ³n de datos
+
+				// AquÃ­ se establecen las diferentes opciones para la recolecciÃ³n de datos
 				switch (op) {
 				case 0:
+					// Llama al método menú
 					menu();
 					break;
 				case 1:
+					// Llama al método para insertar el DNI
 					Pacientes.inDNI();
 					break;
 				case 2:
+					// Llama al método para insertar el nombre
 					Pacientes.inNombre();
 					break;
 				case 3:
+					// Llama al método para insertar la edad
 					Pacientes.inEdad();
 					break;
 				case 4:
+					// Llama al método para insertar la calle
 					Pacientes.inCalle();
 					break;
 				case 5:
+					// Llama al método para insertar la localidad
 					Pacientes.inLocalidad();
 					break;
 				case 6:
+					// Llama al método para insertar el código postal
 					Pacientes.inCodPostal();
 					break;
 				case 7:
+					// Hace que aparezca la opción de guardado cuando se cumplen las condiciones
 					if (Pacientes.DNI != "" && Pacientes.nombre != "" && Pacientes.edad != "" && Pacientes.calle != "" && Pacientes.localidad != "" && Pacientes.cod_postal != "") {
 						System.out.println("Guardando.....");
 						TestConexion.insert_paciente(Pacientes.DNI,Pacientes.nombre,Pacientes.edad,Pacientes.calle,Pacientes.localidad,Pacientes.cod_postal);
-//						TratamientoFichero.tryCatchPaci();
+						// Llama al método "iniciaDatosPac" para inicializar las variables a NULL
 						Pacientes.iniciaDatosPac();
 						menu();
 					}else {
@@ -154,12 +167,13 @@ public class Menu {
 					}
 					break;
 				case 8:
+					// Llama al método "iniciaDatosVis" para borrar el contenido de las variables
 					Pacientes.iniciaDatosPac();
 					System.out.println("Borrando datos....");
 					break;
 				}
 			}
-			
+
 		case 2:
 			if (Profesionales_Medicos.id_codigo != 0) {
 				op = 0;
@@ -171,6 +185,7 @@ public class Menu {
 					System.out.println("2. Peso");
 					System.out.println("3. Altura");
 					System.out.println("4. Calcular IMC");
+					// Hace que aparezca la opción de guardado cuando se cumplen las condiciones
 					if (Visitas.IMC != 0) {
 						System.out.println("5. Guardar");
 					}
@@ -178,45 +193,44 @@ public class Menu {
 					System.out.println("");
 					System.out.println("0. Salir");
 					System.out.println("");
-					
 					// Mediante esta sentencia comprobamos que se introduce la opciÃ³n de forma correcta, y si no, que vuelva introducirla
 					if(sc.hasNextInt()) { 
-					    op = sc.nextInt(); 
+						op = sc.nextInt(); 
 					} else {
-					    sc.next(); 
-					    System.err.println("\nError");
-					    System.err.println("Error: Vuelve a elegir la opcion");
-					}
-					if (op < 0 || op > 6) {
+						sc.next(); 
 						System.err.println("\nError");
 						System.err.println("Error: Vuelve a elegir la opcion");
-						menu();
-						op = 2;
 					}
-					
+
 					// AquÃ­ se establecen las diferentes opciones de la recolecciÃ³n de datos
 					switch (op) {
 					case 0:
+						// Llama al método para regresar al menú
 						menu();
 						break;
 					case 1:
+						// Llama al método para insertar el DNI
 						Visitas.inDNIvisita();
 						break;
 					case 2:
+						// Llama al método para insertar el peso
 						Visitas.inPeso();
 						break;
 					case 3:
+						// Llama al método para insertar la altura
 						Visitas.inAltura();
 						break;
 					case 4:
+						// Llama al método calcular el IMC
 						Visitas.calcC();
 						menu();
 						break;
 					case 5:
+						// Hace que aparezca la opción de guardado cuando se cumplen las condiciones
 						if (Visitas.IMC != 0) {
 							System.out.println("Guardando.....");
-//							TratamientoFichero.tryCatchVisi();
 							TestConexion.insert_Visita( Visitas.f, Visitas.peso, Visitas.altura, Visitas.IMC, Pacientes.DNI,Profesionales_Medicos.id_codigo);
+							// Llama al método "iniciaDatosVis" para borrar el contenido de las variables
 							Visitas.iniciaDatosVis();
 							Profesionales_Medicos.id_codigo = 0;
 							op = 0;
@@ -227,6 +241,7 @@ public class Menu {
 						}
 						break;
 					case 6:
+						// Llama al método "iniciaDatosVis" para borrar el contenido de las variables
 						Visitas.iniciaDatosVis();
 						System.out.println("Borrando datos....");
 						break;
@@ -248,16 +263,13 @@ public class Menu {
 			System.out.println("5. Podologia: Andres");
 			System.out.println("6. Salir");
 			if(sc.hasNextInt()) { 
-			    op = sc.nextInt(); 
+				op = sc.nextInt(); 
 			} else {
-			    sc.next(); 
-			    System.err.println("\nError");
-			    System.err.println("Error: Vuelve a elegir la opcion");
-			}
-			if (op < 0 || op > 6) {
+				sc.next(); 
 				System.err.println("\nError");
 				System.err.println("Error: Vuelve a elegir la opcion");
 			}
+			// Switch para gestionar la elección del profesional 
 			switch (op) {
 			case 1:
 				System.out.println("");
@@ -315,10 +327,7 @@ public class Menu {
 			}
 			break;
 		case 4:
-//			TestConexion.consultaVisitas();
 			op = 0;
-//			menu();
-			
 			System.out.println("\t    Selecciona metodo de busqueda");
 			System.out.println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''");
 			System.out.println("######### CODIGO MEDICO ##########");
@@ -334,11 +343,11 @@ public class Menu {
 			System.out.println("");
 			System.out.println("0. Salir");
 			if(sc.hasNextInt()) { 
-			    op = sc.nextInt(); 
+				op = sc.nextInt(); 
 			} else {
-			    sc.next(); 
-			    System.err.println("\nError");
-			    System.err.println("Error: Vuelve a elegir la opcion");
+				sc.next(); 
+				System.err.println("\nError");
+				System.err.println("Error: Vuelve a elegir la opcion");
 			}
 			switch (op) {
 			case 1:
@@ -363,5 +372,5 @@ public class Menu {
 
 		}
 	}
-	
+
 }
