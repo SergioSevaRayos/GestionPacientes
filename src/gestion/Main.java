@@ -10,8 +10,8 @@ import java.io.IOException;
  * @version		V0.4.
  * @since 		01/03/2023.
  */
-public class Main {
-	
+public class Main { 
+	 
 	/**
 	 * 
 	 * @param args Parámetro de entrada del método principal.
