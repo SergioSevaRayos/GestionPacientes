@@ -8,7 +8,7 @@ class Profesional_medicoTest {
 
 	// Método para testear la creación de un objeto profesional 
 	@Test
-	void test() {
+	void test() { 
 		Profesionales_Medicos.Profesional(1, "123456789", "Cardiología", "Sergio", "Seva Rayos", "12345678A", "Valencia");
 				assertEquals(1, Profesionales_Medicos.id_codigo);
 				assertEquals("123456789", Profesionales_Medicos.telefono);
